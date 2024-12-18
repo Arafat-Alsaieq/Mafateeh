@@ -1,60 +1,60 @@
-//
-//  KeyboardViewController.swift
-//  Enlarged Keys Arabic
-//
-//  Created by Razan on 17/06/1446 AH.
-//
+import SwiftUI
 
-import UIKit
-
-class KeyboardViewController: UIInputViewController {
-
-    @IBOutlet var nextKeyboardButton: UIButton!
+struct KeyboardView: View {
+    // Define rows of Arabic keys
+    let rows = [
+        ["ا", "ب", "ت", "ث", "ج", "ح", "خ"],
+        ["د", "ذ", "ر", "ز", "س", "ش", "ص"],
+        ["ض", "ط", "ظ", "ع", "غ", "ف", "ق"],
+        ["ك", "ل", "م", "ن", "ه", "و", "ي"],
+        ["مسافة", "حذف"]
+    ]
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
+    // Closure to handle key taps
+    var keyTapped: (String) -> Void = { key in
+        print("تم الضغط على المفتاح: \(key)")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .system)
-        
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-    }
-    
-    override func viewWillLayoutSubviews() {
-        self.nextKeyboardButton.isHidden = !self.needsInputModeSwitchKey
-        super.viewWillLayoutSubviews()
-    }
-    
-    override func textWillChange(_ textInput: UITextInput?) {
-        // The app is about to change the document's contents. Perform any preparation here.
-    }
-    
-    override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
-        
-        var textColor: UIColor
-        let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
-            textColor = UIColor.white
-        } else {
-            textColor = UIColor.black
+    var body: some View {
+        VStack(spacing: 10) {
+            ForEach(rows.indices, id: \.self) { rowIndex in
+                HStack(spacing: 10) {
+                    ForEach(rows[rowIndex], id: \.self) { key in
+                        KeyButton(label: key) {
+                            keyTapped(key)
+                        }
+                    }
+                }
+            }
         }
-        self.nextKeyboardButton.setTitleColor(textColor, for: [])
+        .padding()
+        .background(Color.gray.opacity(0.2))
     }
+}
 
+struct KeyButton: View {
+    let label: String
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            Text(label)
+                .font(.system(size: 24))
+                .frame(maxWidth: .infinity, maxHeight: 60)
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(8)
+                .shadow(radius: 2)
+        }
+    }
+}
+
+// Preview
+struct KeyboardView_Previews: PreviewProvider {
+    static var previews: some View {
+        KeyboardView { key in
+            print("تم الضغط على المفتاح: \(key)")
+        }
+        .previewLayout(.sizeThatFits)
+    }
 }
