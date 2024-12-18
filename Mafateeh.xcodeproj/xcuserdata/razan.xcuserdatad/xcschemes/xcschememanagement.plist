@@ -4,6 +4,8 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< HEAD
+=======
 		<key>Enlarged Keys.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -14,12 +16,15 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+>>>>>>> main
 		<key>Mafateeh.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
+<<<<<<< HEAD
+=======
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>86D2632E2D0EC00C000FC61F</key>
@@ -43,5 +48,6 @@
 			<true/>
 		</dict>
 	</dict>
+>>>>>>> main
 </dict>
 </plist>
