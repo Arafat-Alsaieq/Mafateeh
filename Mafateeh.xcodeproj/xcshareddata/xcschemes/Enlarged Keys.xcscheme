@@ -16,7 +16,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A52F883F2D115D9B002D8A55"
+               BlueprintIdentifier = "A56305272D117AC8006D47B4"
                BuildableName = "Enlarged Keys.appex"
                BlueprintName = "Enlarged Keys"
                ReferencedContainer = "container:Mafateeh.xcodeproj">
