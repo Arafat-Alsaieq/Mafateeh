@@ -29,6 +29,23 @@
 		86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C01D07CE2D13F40200FFC9A8 /* Exceptions for "MafateehTests" folder in "Mafateeh" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MafateehApp.swift,
+			);
+			target = 86D2632E2D0EC00C000FC61F /* Mafateeh */;
+		};
+		C01D07CF2D13F40200FFC9A8 /* Exceptions for "MafateehTests" folder in "MafateehTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MafateehApp.swift,
+			);
+			target = 86D263402D0EC00E000FC61F /* MafateehTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		86D263312D0EC00C000FC61F /* Mafateeh */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -37,6 +54,10 @@
 		};
 		86D263442D0EC00E000FC61F /* MafateehTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C01D07CE2D13F40200FFC9A8 /* Exceptions for "MafateehTests" folder in "Mafateeh" target */,
+				C01D07CF2D13F40200FFC9A8 /* Exceptions for "MafateehTests" folder in "MafateehTests" target */,
+			);
 			path = MafateehTests;
 			sourceTree = "<group>";
 		};

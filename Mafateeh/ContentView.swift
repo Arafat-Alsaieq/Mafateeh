@@ -15,24 +15,27 @@ struct AnimatedTextScreen: View {
     
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [Color.white, Color.blue.opacity(0.8)]), center: .center, startRadius: 0, endRadius: 600)
-                .ignoresSafeArea()
-                .blur(radius: 8)
+            Color.white.ignoresSafeArea()
             
-            HStack(spacing: 10) {
+            HStack(spacing: 12) {
                 ForEach(0..<letters.count, id: \.self) { index in
                     VStack {
                         if showLetters[index] {
                             Text(String(letters[index]))
-                                .font(.system(size: 30, weight: .bold))
+                                .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.white)
                                 .frame(width: 50, height: 50)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue.opacity(0.4)]), startPoint: .top, endPoint: .bottom))
+                                .background(
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .fill(Color.blue)
+                                            .shadow(color: .gray.opacity(0.5), radius: 5, x: 2, y: 2)
+                                            .shadow(color: pressed[index] ? Color.blue.opacity(0.3) : Color.clear, radius: 10, x: 0, y: 4)
+                                    }
+                                )
                                 .cornerRadius(12)
-                                .shadow(color: Color.blue.opacity(0.6), radius: 8, x: 4, y: 4)
-                                .rotation3DEffect(.degrees(pressed[index] ? 0 : -10), axis: (x: 1, y: 0, z: 0))
-                                .scaleEffect(pressed[index] ? 0.9 : 1.0)
-                                .animation(Animation.easeInOut(duration: 0.8).delay(Double(index) * 0.2), value: showLetters[index])
+                                .scaleEffect(pressed[index] ? 0.95 : 1.0)
+                                .animation(Animation.easeInOut(duration: 0.3), value: pressed[index])
                         }
                     }
                 }
