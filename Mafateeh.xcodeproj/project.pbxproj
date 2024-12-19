@@ -6,11 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		A5D1B0BB2D12C33D0029BD5F /* Enlarged Keys English.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A5D1B0B42D12C33D0029BD5F /* Enlarged Keys English.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A5D1B0CB2D12C3590029BD5F /* Enlarged Keys Arabic.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A5D1B0C42D12C3590029BD5F /* Enlarged Keys Arabic.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		86D263422D0EC00E000FC61F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -26,20 +21,6 @@
 			remoteGlobalIDString = 86D2632E2D0EC00C000FC61F;
 			remoteInfo = Mafateeh;
 		};
-		A5D1B0B92D12C33D0029BD5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86D263272D0EC00C000FC61F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5D1B0B32D12C33D0029BD5F;
-			remoteInfo = "Enlarged Keys English";
-		};
-		A5D1B0C92D12C3590029BD5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86D263272D0EC00C000FC61F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5D1B0C32D12C3590029BD5F;
-			remoteInfo = "Enlarged Keys Arabic";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,8 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A5D1B0CB2D12C3590029BD5F /* Enlarged Keys Arabic.appex in Embed Foundation Extensions */,
-				A5D1B0BB2D12C33D0029BD5F /* Enlarged Keys English.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,26 +40,7 @@
 		86D2632F2D0EC00C000FC61F /* Mafateeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mafateeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D263412D0EC00E000FC61F /* MafateehTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5D1B0B42D12C33D0029BD5F /* Enlarged Keys English.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Enlarged Keys English.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5D1B0C42D12C3590029BD5F /* Enlarged Keys Arabic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Enlarged Keys Arabic.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A5D1B0BC2D12C33D0029BD5F /* Exceptions for "Enlarged Keys English" folder in "Enlarged Keys English" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = A5D1B0B32D12C33D0029BD5F /* Enlarged Keys English */;
-		};
-		A5D1B0CC2D12C3590029BD5F /* Exceptions for "Enlarged Keys Arabic" folder in "Enlarged Keys Arabic" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = A5D1B0C32D12C3590029BD5F /* Enlarged Keys Arabic */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		86D263312D0EC00C000FC61F /* Mafateeh */ = {
@@ -96,22 +56,6 @@
 		86D2634E2D0EC00E000FC61F /* MafateehUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MafateehUITests;
-			sourceTree = "<group>";
-		};
-		A5D1B0B52D12C33D0029BD5F /* Enlarged Keys English */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A5D1B0BC2D12C33D0029BD5F /* Exceptions for "Enlarged Keys English" folder in "Enlarged Keys English" target */,
-			);
-			path = "Enlarged Keys English";
-			sourceTree = "<group>";
-		};
-		A5D1B0C52D12C3590029BD5F /* Enlarged Keys Arabic */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A5D1B0CC2D12C3590029BD5F /* Exceptions for "Enlarged Keys Arabic" folder in "Enlarged Keys Arabic" target */,
-			);
-			path = "Enlarged Keys Arabic";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -138,20 +82,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5D1B0B12D12C33D0029BD5F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5D1B0C12D12C3590029BD5F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -161,8 +91,6 @@
 				86D263312D0EC00C000FC61F /* Mafateeh */,
 				86D263442D0EC00E000FC61F /* MafateehTests */,
 				86D2634E2D0EC00E000FC61F /* MafateehUITests */,
-				A5D1B0B52D12C33D0029BD5F /* Enlarged Keys English */,
-				A5D1B0C52D12C3590029BD5F /* Enlarged Keys Arabic */,
 				86D263302D0EC00C000FC61F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -173,8 +101,6 @@
 				86D2632F2D0EC00C000FC61F /* Mafateeh.app */,
 				86D263412D0EC00E000FC61F /* MafateehTests.xctest */,
 				86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */,
-				A5D1B0B42D12C33D0029BD5F /* Enlarged Keys English.appex */,
-				A5D1B0C42D12C3590029BD5F /* Enlarged Keys Arabic.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,8 +120,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A5D1B0BA2D12C33D0029BD5F /* PBXTargetDependency */,
-				A5D1B0CA2D12C3590029BD5F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				86D263312D0EC00C000FC61F /* Mafateeh */,
@@ -253,50 +177,6 @@
 			productReference = 86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		A5D1B0B32D12C33D0029BD5F /* Enlarged Keys English */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5D1B0BD2D12C33D0029BD5F /* Build configuration list for PBXNativeTarget "Enlarged Keys English" */;
-			buildPhases = (
-				A5D1B0B02D12C33D0029BD5F /* Sources */,
-				A5D1B0B12D12C33D0029BD5F /* Frameworks */,
-				A5D1B0B22D12C33D0029BD5F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A5D1B0B52D12C33D0029BD5F /* Enlarged Keys English */,
-			);
-			name = "Enlarged Keys English";
-			packageProductDependencies = (
-			);
-			productName = "Enlarged Keys English";
-			productReference = A5D1B0B42D12C33D0029BD5F /* Enlarged Keys English.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		A5D1B0C32D12C3590029BD5F /* Enlarged Keys Arabic */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5D1B0CD2D12C3590029BD5F /* Build configuration list for PBXNativeTarget "Enlarged Keys Arabic" */;
-			buildPhases = (
-				A5D1B0C02D12C3590029BD5F /* Sources */,
-				A5D1B0C12D12C3590029BD5F /* Frameworks */,
-				A5D1B0C22D12C3590029BD5F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A5D1B0C52D12C3590029BD5F /* Enlarged Keys Arabic */,
-			);
-			name = "Enlarged Keys Arabic";
-			packageProductDependencies = (
-			);
-			productName = "Enlarged Keys Arabic";
-			productReference = A5D1B0C42D12C3590029BD5F /* Enlarged Keys Arabic.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -318,12 +198,6 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 86D2632E2D0EC00C000FC61F;
 					};
-					A5D1B0B32D12C33D0029BD5F = {
-						CreatedOnToolsVersion = 16.0;
-					};
-					A5D1B0C32D12C3590029BD5F = {
-						CreatedOnToolsVersion = 16.0;
-					};
 				};
 			};
 			buildConfigurationList = 86D2632A2D0EC00C000FC61F /* Build configuration list for PBXProject "Mafateeh" */;
@@ -343,8 +217,6 @@
 				86D2632E2D0EC00C000FC61F /* Mafateeh */,
 				86D263402D0EC00E000FC61F /* MafateehTests */,
 				86D2634A2D0EC00E000FC61F /* MafateehUITests */,
-				A5D1B0B32D12C33D0029BD5F /* Enlarged Keys English */,
-				A5D1B0C32D12C3590029BD5F /* Enlarged Keys Arabic */,
 			);
 		};
 /* End PBXProject section */
@@ -365,20 +237,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		86D263492D0EC00E000FC61F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5D1B0B22D12C33D0029BD5F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5D1B0C22D12C3590029BD5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,20 +267,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5D1B0B02D12C33D0029BD5F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5D1B0C02D12C3590029BD5F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -435,16 +279,6 @@
 			isa = PBXTargetDependency;
 			target = 86D2632E2D0EC00C000FC61F /* Mafateeh */;
 			targetProxy = 86D2634C2D0EC00E000FC61F /* PBXContainerItemProxy */;
-		};
-		A5D1B0BA2D12C33D0029BD5F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5D1B0B32D12C33D0029BD5F /* Enlarged Keys English */;
-			targetProxy = A5D1B0B92D12C33D0029BD5F /* PBXContainerItemProxy */;
-		};
-		A5D1B0CA2D12C3590029BD5F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5D1B0C32D12C3590029BD5F /* Enlarged Keys Arabic */;
-			targetProxy = A5D1B0C92D12C3590029BD5F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -692,102 +526,6 @@
 			};
 			name = Release;
 		};
-		A5D1B0BE2D12C33D0029BD5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Enlarged Keys English/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys English";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafat.Mafateeh.Enlarged-Keys-English";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A5D1B0BF2D12C33D0029BD5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Enlarged Keys English/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys English";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafat.Mafateeh.Enlarged-Keys-English";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		A5D1B0CE2D12C3590029BD5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Enlarged Keys Arabic/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys Arabic";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafat.Mafateeh.Enlarged-Keys-Arabic";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A5D1B0CF2D12C3590029BD5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Enlarged Keys Arabic/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys Arabic";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Arafat.Mafateeh.Enlarged-Keys-Arabic";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -823,24 +561,6 @@
 			buildConfigurations = (
 				86D2635C2D0EC00E000FC61F /* Debug */,
 				86D2635D2D0EC00E000FC61F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A5D1B0BD2D12C33D0029BD5F /* Build configuration list for PBXNativeTarget "Enlarged Keys English" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5D1B0BE2D12C33D0029BD5F /* Debug */,
-				A5D1B0BF2D12C33D0029BD5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A5D1B0CD2D12C3590029BD5F /* Build configuration list for PBXNativeTarget "Enlarged Keys Arabic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5D1B0CE2D12C3590029BD5F /* Debug */,
-				A5D1B0CF2D12C3590029BD5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
