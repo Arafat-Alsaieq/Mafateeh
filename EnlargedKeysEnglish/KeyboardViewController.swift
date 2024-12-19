@@ -1,60 +1,63 @@
-//
-//  KeyboardViewController.swift
-//  EnlargedKeysEnglish
-//
-//  Created by Lujain sh on 19/12/2024.
-//
-
 import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
-    @IBOutlet var nextKeyboardButton: UIButton!
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Set up the keyboard view
+        let keyboardView = UIView()
+        keyboardView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(keyboardView)
         
-        // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .system)
+        NSLayoutConstraint.activate([
+            keyboardView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            keyboardView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            keyboardView.topAnchor.constraint(equalTo: view.topAnchor),
+            keyboardView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
         
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-    }
-    
-    override func viewWillLayoutSubviews() {
-        self.nextKeyboardButton.isHidden = !self.needsInputModeSwitchKey
-        super.viewWillLayoutSubviews()
-    }
-    
-    override func textWillChange(_ textInput: UITextInput?) {
-        // The app is about to change the document's contents. Perform any preparation here.
-    }
-    
-    override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
-        
-        var textColor: UIColor
-        let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
-            textColor = UIColor.white
-        } else {
-            textColor = UIColor.black
+        // Add buttons
+        let buttonTitles = [
+            ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+            ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
+            ["z", "x", "c", "v", "b", "n", "m"]
+        ]
+
+        let rowsStackView = UIStackView()
+        rowsStackView.axis = .vertical
+        rowsStackView.spacing = 8
+        rowsStackView.translatesAutoresizingMaskIntoConstraints = false
+        keyboardView.addSubview(rowsStackView)
+
+        NSLayoutConstraint.activate([
+            rowsStackView.leadingAnchor.constraint(equalTo: keyboardView.leadingAnchor, constant: 10),
+            rowsStackView.trailingAnchor.constraint(equalTo: keyboardView.trailingAnchor, constant: -10),
+            rowsStackView.topAnchor.constraint(equalTo: keyboardView.topAnchor, constant: 10),
+            rowsStackView.bottomAnchor.constraint(equalTo: keyboardView.bottomAnchor, constant: -10)
+        ])
+
+        for row in buttonTitles {
+            let rowStackView = UIStackView()
+            rowStackView.axis = .horizontal
+            rowStackView.spacing = 5
+            rowStackView.distribution = .fillEqually
+
+            for title in row {
+                let button = UIButton(type: .system)
+                button.setTitle(title, for: .normal)
+                button.addTarget(self, action: #selector(keyPressed(_:)), for: .touchUpInside)
+                button.backgroundColor = .lightGray
+                button.layer.cornerRadius = 5
+                rowStackView.addArrangedSubview(button)
+            }
+
+            rowsStackView.addArrangedSubview(rowStackView)
         }
-        self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
 
+    @objc func keyPressed(_ sender: UIButton) {
+        guard let title = sender.title(for: .normal) else { return }
+        textDocumentProxy.insertText(title)
+    }
 }
