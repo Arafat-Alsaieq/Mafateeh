@@ -63,7 +63,6 @@ struct MyClipboard: View {
                         .listStyle(PlainListStyle())
                         .padding(.top, 5)
                         .padding(.horizontal, 20)
-                        .cornerRadius(10)
                     }
 
                     if editMode?.wrappedValue == .active {
