@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Group 632654.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -12,6 +13,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "Group Dark.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
