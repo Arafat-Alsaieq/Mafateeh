@@ -6,175 +6,242 @@
 //
 
 import SwiftUI
+import SwiftData
+
+@Model
+class Phrase: Identifiable {
+    @Attribute(.unique) var content: String
+
+    init(content: String) {
+        self.content = content
+    }
+}
 
 struct MyClipboard: View {
-    @State private var savedPhrases: [String] = []
+    @Environment(\.modelContext) private var modelContext
+    @Query private var savedPhrases: [Phrase]
     @State private var showSheet: Bool = false
     @State private var newPhrase: String = ""
-    @State private var editingIndex: Int? = nil
-    @State private var selectedItems: Set<String> = []
-    
+    @State private var editingPhrase: Phrase?
+    @State private var selectedItems: Set<Phrase> = [] // Multi-selection
+
     @Environment(\.editMode) private var editMode
-    
+
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 Color("BG")
                     .edgesIgnoringSafeArea(.all)
-                
-                if savedPhrases.isEmpty {
-                    VStack {
-                        Spacer()
-                        VStack(spacing: 16) {
-                            Text("💬")
-                                .font(.system(size: 90))
-                                .offset(x: -5, y: 30)
-                            // !! haven't flipped text balloon horizontally !!
-                            Text("⚡️")
-                                .font(.system(size: 90))
-                                .offset(x: 30, y: -150)
-                            Text("You have no saved phrases")
-                                .fontWeight(.semibold)
-                                .font(.body)
-                                .padding(.top, -100)
-                                .overlay(
-                                    Rectangle()
-                                        .foregroundStyle(Color("BG"))
-                                        .frame(width: 1000, height: 500)
-                                        .offset(y: -40)
-                                        .opacity(0.5)
-                                )
-                        }
-                        Spacer()
-                        Button(action: {
-                            newPhrase = ""
-                            editingIndex = nil
-                            showSheet = true
-                        }) {
-                            Text("Add Now")
-                                .fontWeight(.semibold)
-                                .frame(maxWidth: .infinity, minHeight: 50)
-                                .background(Color("Button"))
-                                .foregroundColor(.white)
-                                .cornerRadius(25)
-                                .padding(.horizontal, 20)
-                        }
-                        .padding(.bottom, 40)
-                    }
-                } else {
-                    List(selection: $selectedItems) {
-                        ForEach(savedPhrases, id: \.self) { phrase in
-                            Text(phrase)
-                                .onTapGesture {
-                                    if editMode?.wrappedValue == .inactive {
-                                        newPhrase = phrase
-                                        editingIndex = savedPhrases.firstIndex(of: phrase)
-                                        showSheet = true
-                                    }
-//                                    newPhrase = savedPhrases[index]
-//                                    editingIndex = index
-//                                    showSheet = true
-                                }
-                        }
-                    }
-                    .environment(\.editMode, editMode)
-                    .listStyle(PlainListStyle())
-                    .padding(.top, 40)
-                    .padding(.horizontal, 20)
 
-                    
-                    Spacer()
-                    
-                    if editMode?.wrappedValue != .active {
-                        Button(action: {
-                            newPhrase = ""
-                            editingIndex = nil
-                            showSheet = true
-                        }) {
-                            Text("Add Phrase")
-                                .fontWeight(.semibold)
-                                .frame(maxWidth: .infinity, minHeight: 50)
-                                .background(Color("Button"))
-                                .foregroundColor(.white)
-                                .cornerRadius(25)
-                                .padding(.horizontal, 20)
+                if savedPhrases.isEmpty {
+                        emptyStateView()
+                } else {
+                    VStack(alignment: .leading, spacing: 0) {
+                        // Sub-header
+                        Text("SAVED")
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.gray)
+                            .padding(.horizontal, 35)
+                            .padding(.top, 40)
+                        
+                        List(selection: $selectedItems) {
+                            ForEach(savedPhrases, id: \.self) { phrase in
+                                Text(phrase.content)
+                                    .onTapGesture {
+                                        if editMode?.wrappedValue == .inactive {
+                                            newPhrase = phrase.content
+                                            editingPhrase = phrase
+                                            showSheet = true
+                                        }
+                                    }
+                            }
+                            // Swipe-to-delete works only when not in Edit Mode
+                            .onDelete(perform: editMode?.wrappedValue == .inactive ? swipeToDelete : nil)
                         }
-                        .padding(.top, 610)
+                        .environment(\.editMode, editMode)
+                        .listStyle(PlainListStyle())
+                        .padding(.top, 5)
+                        .padding(.horizontal, 20)
+                    }
+
+                    if editMode?.wrappedValue == .active {
+                        bottomDeleteButton()
+                    } else {
+                        VStack {
+                            Spacer()
+                            bottomAddButton()
+                        }
                     }
                 }
             }
             .navigationBarBackButtonHidden(false)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text("My Clipboard")
-                            .font(.system(size: 24, weight: .semibold))
-                            .padding(.top, 30)
-                    }
-                if !savedPhrases.isEmpty {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(editMode?.wrappedValue == .active ? "Done" : "Select") {
-                            withAnimation {
-                                editMode?.wrappedValue = editMode?.wrappedValue == .active ? .inactive : .active
-                                selectedItems.removeAll()
-                            }
-                        }
-                    }
-
-                    if editMode?.wrappedValue == .active {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button("Select All") {
-                                if selectedItems.count == savedPhrases.count {
-                                    selectedItems.removeAll()
-                                } else {
-                                    selectedItems = Set(savedPhrases)
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                if editMode?.wrappedValue == .active && !selectedItems.isEmpty {
-                    ToolbarItem(placement: .bottomBar) {
-                        Button("Delete") {
-                            deleteSelectedItems()
-                        }
-                        .foregroundColor(.red)
-                        .padding(.bottom, 50)
-                    }
-                }
+                toolbarContent()
             }
             .sheet(isPresented: $showSheet) {
                 AddPhraseSheet(
                     newPhrase: $newPhrase,
-                    savedPhrases: $savedPhrases,
-                    showSheet: $showSheet,
-                    editingIndex: $editingIndex
+                    editingPhrase: $editingPhrase
                 )
+            }
+            .onChange(of: savedPhrases) {
+                if savedPhrases.isEmpty {
+                    withAnimation {
+                        editMode?.wrappedValue = .inactive
+                    }
+                }
             }
         }
     }
+
+    // MARK: - Views
     
-    func deleteSelectedItems() {
-        savedPhrases.removeAll { selectedItems.contains($0) }
-        selectedItems.removeAll()
-        withAnimation {
-            editMode?.wrappedValue = .inactive
+    @ViewBuilder
+    private func emptyStateView() -> some View {
+        VStack {
+            Spacer()
+            VStack(spacing: 16) {
+                Text("💬")
+                    .font(.system(size: 90))
+                    .offset(x: -5, y: 30)
+                Text("⚡️")
+                    .font(.system(size: 90))
+                    .offset(x: 30, y: -150)
+                Text("You have no saved phrases")
+                    .fontWeight(.semibold)
+                    .font(.body)
+                    .padding(.top, -100)
+                    .overlay(
+                        Rectangle()
+                            .foregroundStyle(Color("BG"))
+                            .frame(width: 1000, height: 500)
+                            .offset(y: -40)
+                            .opacity(0.5)
+                    )
+            }
+            Spacer()
+            bottomAddButton()
         }
+    }
+    
+    @ViewBuilder
+    private func bottomAddButton() -> some View {
+        Button(action: {
+            newPhrase = ""
+            editingPhrase = nil
+            showSheet = true
+        }) {
+            Text("Add Phrase")
+                .fontWeight(.semibold)
+                .frame(maxWidth: .infinity, minHeight: 50)
+                .background(Color("Button"))
+                .foregroundColor(.white)
+                .cornerRadius(25)
+                .padding(.horizontal, 20)
+        }
+        .padding(.bottom, 40)
+    }
+    
+    @ViewBuilder
+    private func bottomDeleteButton() -> some View {
+        VStack {
+            Spacer()
+            Button(action: {
+                deleteSelectedPhrases()
+            }) {
+                Text("Delete")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(25)
+                    .padding(.horizontal, 20)
+            }
+            .disabled(selectedItems.isEmpty) // Disable until a phrase is selected
+            .opacity(selectedItems.isEmpty ? 0.5 : 1.0) // Visually indicate disabled state
+            .padding(.bottom, 40)
+        }
+    }
+
+    @ToolbarContentBuilder
+    private func toolbarContent() -> some ToolbarContent {
+        ToolbarItem(placement: .principal) {
+            Text("My Clipboard")
+                .font(.system(size: 24, weight: .semibold))
+                .padding(.top, 30)
+        }
+        if !savedPhrases.isEmpty {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(editMode?.wrappedValue == .active ? "Done" : "Select") {
+                    withAnimation {
+                        editMode?.wrappedValue = editMode?.wrappedValue == .active ? .inactive : .active
+                        selectedItems.removeAll()
+                    }
+                }
+                .padding(.top, 30)
+            }
+        }
+        if editMode?.wrappedValue == .active && !savedPhrases.isEmpty {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Select All") {
+                    if selectedItems.count == savedPhrases.count {
+                        selectedItems.removeAll()
+                    } else {
+                        selectedItems = Set(savedPhrases)
+                    }
+                }
+                .padding(.top, 35)
+            }
+        }
+    }
+
+    // MARK: - Functions
+    
+    func deleteSelectedPhrases() {
+        withAnimation {
+            for phrase in selectedItems {
+                modelContext.delete(phrase)
+            }
+            selectedItems.removeAll()
+            
+            if savedPhrases.isEmpty {
+                withAnimation {
+                    editMode?.wrappedValue = .inactive
+                }
+            }
+        }
+    }
+
+    func swipeToDelete(at offsets: IndexSet) {
+        withAnimation {
+            for index in offsets {
+                let phrase = savedPhrases[index]
+                modelContext.delete(phrase)
+            }
+            
+            if savedPhrases.isEmpty {
+                withAnimation {
+                    editMode?.wrappedValue = .inactive
+                }
+            }
+        }
+
     }
 }
 
 struct AddPhraseSheet: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     @Binding var newPhrase: String
-    @Binding var savedPhrases : [String]
-    @Binding var showSheet: Bool
-    @Binding var editingIndex: Int?
-    
+    @Binding var editingPhrase: Phrase?
+
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    showSheet = false
+                    dismiss()
                 }) {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.blue)
@@ -184,16 +251,20 @@ struct AddPhraseSheet: View {
                 Spacer()
                 Button("Save") {
                     if !newPhrase.isEmpty {
-                        if let index = editingIndex {
-                            // Update the existing phrase
-                            savedPhrases[index] = newPhrase
+                        // Check for duplicates
+                        if let _ = try? modelContext.fetch(FetchDescriptor<Phrase>(predicate: #Predicate { $0.content == newPhrase })).first {
+                            print("Duplicate content detected. Phrase already exists.")
                         } else {
-                            // Add a new phrase
-                            savedPhrases.append(newPhrase)
+                            if let phrase = editingPhrase {
+                                phrase.content = newPhrase
+                            } else {
+                                let newPhraseModel = Phrase(content: newPhrase)
+                                modelContext.insert(newPhraseModel)
+                            }
+                            newPhrase = ""
+                            editingPhrase = nil
+                            dismiss()
                         }
-                        newPhrase = ""
-                        editingIndex = nil
-                        showSheet = false
                     }
                 }
                 .padding()
@@ -211,10 +282,7 @@ struct AddPhraseSheet: View {
             Spacer()
         }
     }
-    
 }
-
-
 
 #Preview {
     MyClipboard()
