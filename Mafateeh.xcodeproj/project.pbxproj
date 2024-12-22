@@ -45,7 +45,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		A52F884C2D115D9B002D8A55 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -53,7 +53,7 @@
 				323755992D1411D600EDE450 /* Enlarged Keys English.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -454,7 +454,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23M44X3UB9;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys English/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys English";
@@ -480,7 +480,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23M44X3UB9;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys English/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys English";
@@ -506,7 +506,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23M44X3UB9;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys Arabic/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys Arabic";
@@ -532,7 +532,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23M44X3UB9;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys Arabic/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys Arabic";
@@ -677,11 +677,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Mafateeh/Mafateeh.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Mafateeh/MafateehDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mafateeh/Preview Content\"";
-				DEVELOPMENT_TEAM = JXJN5SRBCT;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -694,8 +695,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.razan.Mafateeh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mb.Arafat.Mafateeh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -711,7 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mafateeh/Preview Content\"";
-				DEVELOPMENT_TEAM = JXJN5SRBCT;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
