@@ -1,8 +1,8 @@
 //
 //  KeyboardViewController.swift
-//  EnlargedKeysArabic
+//  Enlarged Keys Arabic
 //
-//  Created by Lujain sh on 19/12/2024.
+//  Created by Maryam Amer Bin Siddique on 18/06/1446 AH.
 //
 
 import UIKit
