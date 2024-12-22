@@ -25,7 +25,7 @@ struct MafateehApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AnimatedTextScreen()
         }
         .modelContainer(sharedModelContainer)
     }

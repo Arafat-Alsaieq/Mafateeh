@@ -6,56 +6,76 @@
 //
 
 import SwiftUI
-import SwiftData
 
-struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+struct AnimatedTextScreen: View {
+    @State private var showLetters = Array(repeating: false, count: 7)
+    @State private var pressed = Array(repeating: false, count: 7)
+    
+    let letters = Array("مفاتيح")
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        ZStack {
+            Color.white.ignoresSafeArea()
+            
+            VStack {
+                HStack(spacing: 12) {
+                    ForEach(0..<letters.count, id: \.self) { index in
+                        VStack {
+                            if showLetters[index] {
+                                Text(String(letters[index]))
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .frame(width: 50, height: 50)
+                                    .background(
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 12)
+                                                .fill(Color.button) // تم استبدال اللون هنا
+                                                .shadow(color: .gray.opacity(0.5), radius: 5, x: 2, y: 2)
+                                                .shadow(color: pressed[index] ? Color.button.opacity(0.3) : Color.clear, radius: 10, x: 0, y: 4)
+                                        }
+                                    )
+                                    .cornerRadius(12)
+                                    .scaleEffect(pressed[index] ? 0.95 : 1.0)
+                                    .animation(Animation.easeInOut(duration: 0.3), value: pressed[index])
+                            }
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .padding(.horizontal, 10)
+                .environment(\.layoutDirection, .rightToLeft) // لضبط الاتجاه من اليمين لليسار
+                
+                Text("Mafateeh")
+                    .font(.system(size: 32, weight: .bold))
+                    .foregroundColor(.button) // تم استبدال اللون هنا أيضًا
+                    .padding(.top, 20) // المسافة بين المربعات والكلمة
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+        }
+        .onAppear {
+            for index in 0..<letters.count {
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.3) {
+                    withAnimation {
+                        showLetters[index] = true
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 + Double(index) * 0.2) {
+                        withAnimation { pressed[index] = true }
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8 + Double(index) * 0.2) {
+                        withAnimation { pressed[index] = false }
                     }
                 }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
             }
         }
     }
 }
 
+struct ContentView: View {
+    var body: some View {
+        AnimatedTextScreen()
+    }
+}
+
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
