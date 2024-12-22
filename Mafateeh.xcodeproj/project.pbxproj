@@ -454,7 +454,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				DEVELOPMENT_TEAM = JXJN5SRBCT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys English/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys English";
@@ -480,7 +480,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				DEVELOPMENT_TEAM = JXJN5SRBCT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys English/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys English";
@@ -506,7 +506,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				DEVELOPMENT_TEAM = JXJN5SRBCT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys Arabic/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys Arabic";
@@ -532,7 +532,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				DEVELOPMENT_TEAM = JXJN5SRBCT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Enlarged Keys Arabic/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Keys Arabic";
@@ -682,7 +682,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mafateeh/Preview Content\"";
-				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				DEVELOPMENT_TEAM = JXJN5SRBCT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -695,7 +695,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mb.Arafat.Mafateeh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razan.Mafateeh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -713,7 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mafateeh/Preview Content\"";
-				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				DEVELOPMENT_TEAM = JXJN5SRBCT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
