@@ -44,7 +44,7 @@ struct AnimatedTextScreen: View {
                 .padding(.horizontal, 10)
                 .environment(\.layoutDirection, .rightToLeft) // لضبط الاتجاه من اليمين لليسار
                 
-                Text("Mafateeh")
+                Text("M  a  f  a  t  e  e  h")
                     .font(.system(size: 32, weight: .bold))
                     .foregroundColor(.button) // تم استبدال اللون هنا أيضًا
                     .padding(.top, 20) // المسافة بين المربعات والكلمة
