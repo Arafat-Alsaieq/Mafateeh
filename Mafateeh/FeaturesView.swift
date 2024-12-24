@@ -14,28 +14,28 @@ struct FeaturesView: View {
             HStack(spacing: 10) {
                 Capsule()
                     .fill(Color.gray.opacity(0.4))
-                    .frame(width: 60, height: 6)
+                    .frame(width: 100, height: 7)
                 Capsule()
                     .fill(Color.blue)
-                    .frame(width: 60, height: 6)
+                    .frame(width: 100, height: 7)
                 Capsule()
                     .fill(Color.gray.opacity(0.4))
-                    .frame(width: 60, height: 6)
+                    .frame(width: 100, height: 7)
             }
             .padding(.top, 30)
             
-            Spacer(minLength: 20)
+            Spacer(minLength: 35)
 
             // Scrollable Content
             ScrollView {
                 VStack(spacing: 30) {
                     // Feature Card
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 30)
                         .fill(Color.white)
                         .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 5)
-                        .frame(width: UIScreen.main.bounds.width - 40, height: 400)
+                        .frame(width: UIScreen.main.bounds.width - 40, height: 530)
                         .overlay(
-                            VStack(alignment: .leading, spacing: 20) {
+                            VStack(alignment: .leading, spacing: 50) {
                                 FeatureRow(
                                     title: "Larger and Clearer than Ever",
                                     description: "A bigger, easier-to-read keyboard for better clarity",
@@ -57,7 +57,7 @@ struct FeaturesView: View {
                                     icon: "✍️"
                                 )
                             }
-                            .padding(20)
+                            .padding(40)
                         )
                 }
                 .padding(.vertical, 10)
