@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8BCCC5472D19502900D8E435 /* Enlarged Key English.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A5A16AE52D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */; };
+		A5A16AE62D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		86D263412D0EC00E000FC61F /* MafateehTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Enlarged Key English.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -126,6 +129,7 @@
 		86D263262D0EC00C000FC61F = {
 			isa = PBXGroup;
 			children = (
+				A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */,
 				86D263312D0EC00C000FC61F /* Mafateeh */,
 				86D263442D0EC00E000FC61F /* MafateehTests */,
 				86D2634E2D0EC00E000FC61F /* MafateehUITests */,
@@ -293,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A16AE62D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A16AE52D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +434,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -484,6 +491,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
