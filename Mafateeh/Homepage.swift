@@ -9,7 +9,7 @@ struct Homepage: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Text("Big Keys,                                                  Boundless Ease")
+                    Text("Big Keys,                Boundless Ease")
                         .fontWeight(.semibold)
                         .font(.system(size: 35))
                         .padding(.top, 30)
