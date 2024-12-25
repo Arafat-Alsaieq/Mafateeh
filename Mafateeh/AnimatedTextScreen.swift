@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  Mafateeh
-//
-//  Created by Arafat on 15/12/2024.
-//
 import SwiftUI
 
 struct AnimatedTextScreen: View {
@@ -78,7 +72,7 @@ struct AnimatedTextScreen: View {
             
             // الانتقال إلى FeaturesView بعد 4 ثواني
             NavigationLink(
-                destination: FeaturesView(),
+                destination: FeaturesView().navigationBarBackButtonHidden(true), // إخفاء زر الرجوع
                 isActive: $navigateToFeaturesView,
                 label: { EmptyView() }
             )
@@ -86,14 +80,6 @@ struct AnimatedTextScreen: View {
     }
 }
 
-struct FeaturesViewl: View {
-    var body: some View {
-        Text("This is the Features View")
-            .font(.title)
-            .padding()
-            .navigationBarBackButtonHidden(true)  // إخفاء زر الرجوع
-    }
-}
 
 struct ContentView: View {
     var body: some View {
