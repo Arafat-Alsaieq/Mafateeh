@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppFeatures_Home: View {
+struct AppFeatures: View {
     var body: some View {
         ZStack {
             Color(.systemGray6)
@@ -82,8 +82,8 @@ struct FeatureRowl: View {
     }
 }
 
-struct AppFeatures_Home_Previews: PreviewProvider {
+struct AppFeatures_Previews: PreviewProvider {
     static var previews: some View {
-        AppFeatures_Home()
+        AppFeatures()
     }
 }
