@@ -4,26 +4,28 @@ struct Homepage: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Background color filling the entire screen
                 Color("BG")
                     .ignoresSafeArea()
                 
                 VStack {
-                    Text("Big Keys,                Boundless Ease")
+                    Text(NSLocalizedString("Big Keys,  Boundless Ease", comment: "Main title on the homepage"))
                         .fontWeight(.semibold)
                         .font(.system(size: 35))
                         .padding(.top, 30)
                         .padding(.leading, 40)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    VStack(spacing: -50) { // Adds consistent spacing between buttons
+                    Spacer()
+
+                    VStack(spacing: -50) {
                         NavigationLink(destination: AppFeatures()){
-                            CustomButton(text: "App Features", emoji: "🌟")
+                            CustomButton(text: NSLocalizedString("App Features", comment: "Button text for app features"), emoji: "🌟")
                         }
                         NavigationLink(destination: AppTutorial()) {
-                            CustomButton(text: "Tutorial", emoji: "🎞️")
+                            CustomButton(text: NSLocalizedString("Tutorial", comment: "Button text for tutorial"), emoji: "🎞️")
                         }
                         NavigationLink(destination: MyClipboard()) {
-                            CustomButton(text: "My clipboard", emoji: "📋")
+                            CustomButton(text: NSLocalizedString("My clipboard", comment: "Button text for my clipboard"), emoji: "📋")
                         }
                     }
                     .padding(.bottom, 50)
@@ -50,15 +52,16 @@ struct CustomButton: View {
             
             HStack {
                 Text(text)
-                    .font(.title2)
-                    .fontWeight(.bold)
+                    .font(.title)
+                    .fontWeight(.medium)
                     .foregroundColor(.white)
                     .padding(.leading, 60)
                     .padding(.bottom, 30)
-                    .font(.system(size: 25))
+                    .font(.system(size: 28))
+                    .lineLimit(1)
                 
                 Spacer()
-                
+
                 if let emoji = emoji {
                     Text(emoji)
                         .font(.system(size: 50))
@@ -68,8 +71,6 @@ struct CustomButton: View {
         }
     }
 }
-
-
 
 #Preview {
     Homepage()

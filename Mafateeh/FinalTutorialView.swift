@@ -20,7 +20,7 @@ struct FinalTutorialView: View {
                 ScrollView {
                     VStack(spacing: 30) {
                         RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.gray.opacity(0.4))
+                            .fill(Color.gray.opacity(0.2)) // تم تغميق اللون درجتين
                             .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 5)
                             .frame(width: UIScreen.main.bounds.width - 40, height: 530)
                     }
@@ -47,8 +47,6 @@ struct FinalTutorialView: View {
     }
 }
 
-
-    
 #Preview {
     FinalTutorialView()
 }

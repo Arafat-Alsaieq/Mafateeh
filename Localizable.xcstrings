@@ -53,12 +53,13 @@
         }
       }
     },
-    "Big Keys,                Boundless Ease" : {
+    "Big Keys,  Boundless Ease" : {
+      "comment" : "Main title on the homepage",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" :"وضوح أكبر، \nكــتابة أسهـل"
+            "value" : "وضوح أكبر، \nكــتابة أسهـل"
           }
         }
       }
@@ -94,16 +95,6 @@
         }
       }
     },
-    "Hello, World!" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مرحبا"
-          }
-        }
-      }
-    },
     "Larger and Clearer than Ever" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -126,7 +117,7 @@
       }
     },
     "My clipboard" : {
-      "extractionState" : "manual",
+      "comment" : "Button text for my clipboard",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -147,11 +138,29 @@
       }
     },
     "Next" : {
+      "comment" : "Button text to proceed to next screen",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "التالي"
+          }
+        }
+      }
+    },
+    "Predictive and Convenient" : {
+      "comment" : "Feature title: Predictive text\nFeature: Predictive text feature",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنبؤي و عملي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predictive and Convenient"
           }
         }
       }
@@ -219,6 +228,7 @@
       }
     },
     "Skip" : {
+      "comment" : "Button text to skip tutorial",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

@@ -22,29 +22,29 @@ struct AppFeatures: View {
                     .overlay(
                         VStack(alignment: .leading, spacing: 50) {
                             FeatureRow(
-                                title: "Larger and Clearer than Ever",
-                                description: "A bigger, easier-to-read keyboard for better clarity",
+                                title: NSLocalizedString("Larger and Clearer than Ever", comment: "Feature title: Larger and clearer keyboard"),
+                                description: NSLocalizedString("A bigger, easier-to-read keyboard for better clarity", comment: "Description for the feature of a larger keyboard"),
                                 icon: "🖥️"
                             )
                             FeatureRow(
-                                title: "Use your Voice",
-                                description: "Hands-free typing with voice recognition",
+                                title: NSLocalizedString("Use your Voice", comment: "Feature title: Voice typing"),
+                                description: NSLocalizedString("Hands-free typing with voice recognition", comment: "Description for voice recognition feature"),
                                 icon: "🗣️"
                             )
                             FeatureRow(
-                                title: "Predictive and Convenient",
-                                description: "Smart suggestions to speed up typing",
+                                title: NSLocalizedString("Predictive and Convenient", comment: "Feature title: Predictive text"),
+                                description: NSLocalizedString("Smart suggestions to speed up typing", comment: "Description for predictive typing feature"),
                                 icon: "💡"
                             )
                             FeatureRow(
-                                title: "Quick Phrases",
-                                description: "Saved favorite phrases for effortless access and faster typing",
+                                title: NSLocalizedString("Quick Phrases", comment: "Feature title: Quick phrases"),
+                                description: NSLocalizedString("Saved favorite phrases for effortless access and faster typing", comment: "Description for saved quick phrases feature"),
                                 icon: "✍️"
                             )
                         }
                         .padding(40)
                     )
-                    .padding(.top, 30)
+                    .padding(.top, 10) // تم تخفيض المسافة لتقريب المربع
                 Spacer(minLength: 0)
             }
         }
