@@ -58,7 +58,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "وضوح أكبر، \nكــتابة أسهـل"
+            "value" :"وضوح أكبر، \nكــتابة أسهـل"
           }
         }
       }
