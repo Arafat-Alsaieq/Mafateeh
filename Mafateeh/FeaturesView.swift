@@ -76,6 +76,7 @@ struct FeaturesView: View {
                             .background(Color.blue)
                             .cornerRadius(25)
                             .padding(.horizontal, 20)
+                        
                     }
 
                     NavigationLink(destination: Homepage().navigationBarBackButtonHidden(true)) {

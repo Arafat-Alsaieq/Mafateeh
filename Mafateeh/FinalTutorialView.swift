@@ -30,8 +30,15 @@ struct FinalTutorialView: View {
                 Spacer()
 
                 VStack(spacing: 15) {
-                    NavigationLink(destination: Homepage().navigationBarBackButtonHidden(true)) {
-                        Text("Next")
+                    Button(action: {
+                        // Open the app's system settings
+                        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                            if UIApplication.shared.canOpenURL(settingsURL) {
+                                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                            }
+                        }
+                    }) {
+                        Text("Go Settings")
                             .font(.title2)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 50)
@@ -47,8 +54,6 @@ struct FinalTutorialView: View {
     }
 }
 
-
-    
 #Preview {
     FinalTutorialView()
 }
