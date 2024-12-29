@@ -10,6 +10,8 @@
 		8BCCC5472D19502900D8E435 /* Enlarged Key English.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A5A16AE52D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */; };
 		A5A16AE62D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */; };
+		C061319D2D21379B00EB8864 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C061319C2D21379B00EB8864 /* Localizable.xcstrings */; };
+		C061319E2D21379B00EB8864 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C061319C2D21379B00EB8864 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,7 @@
 		86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Enlarged Key English.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		C061319C2D21379B00EB8864 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -130,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */,
+				C061319C2D21379B00EB8864 /* Localizable.xcstrings */,
 				86D263312D0EC00C000FC61F /* Mafateeh */,
 				86D263442D0EC00E000FC61F /* MafateehTests */,
 				86D2634E2D0EC00E000FC61F /* MafateehUITests */,
@@ -297,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C061319E2D21379B00EB8864 /* Localizable.xcstrings in Resources */,
 				A5A16AE62D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C061319D2D21379B00EB8864 /* Localizable.xcstrings in Resources */,
 				A5A16AE52D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
