@@ -39,23 +39,23 @@ struct FeaturesView: View {
                             .overlay(
                                 VStack(alignment: .leading, spacing: 50) {
                                     FeatureRow(
-                                        title: "Larger and Clearer than Ever",
-                                        description: "A bigger, easier-to-read keyboard for better clarity",
+                                        title: NSLocalizedString("Larger and Clearer than Ever", comment: "Feature: Describes the size of the keyboard"),
+                                        description: NSLocalizedString("A bigger, easier-to-read keyboard for better clarity", comment: "Description for larger keyboard feature"),
                                         icon: "🖥️"
                                     )
                                     FeatureRow(
-                                        title: "Use your Voice",
-                                        description: "Hands-free typing with voice recognition",
+                                        title: NSLocalizedString("Use your Voice", comment: "Feature: Voice typing option"),
+                                        description: NSLocalizedString("Hands-free typing with voice recognition", comment: "Description for voice recognition feature"),
                                         icon: "🗣️"
                                     )
                                     FeatureRow(
-                                        title: "Predictive and Convenient",
-                                        description: "Smart suggestions to speed up typing",
+                                        title: NSLocalizedString("Predictive and Convenient", comment: "Feature: Predictive text feature"),
+                                        description: NSLocalizedString("Smart suggestions to speed up typing", comment: "Description for predictive typing feature"),
                                         icon: "💡"
                                     )
                                     FeatureRow(
-                                        title: "Quick Phrases",
-                                        description: "Saved favorite phrases for effortless access and faster typing",
+                                        title: NSLocalizedString("Quick Phrases", comment: "Feature: Quick access to saved phrases"),
+                                        description: NSLocalizedString("Saved favorite phrases for effortless access and faster typing", comment: "Description for saved phrases feature"),
                                         icon: "✍️"
                                     )
                                 }
@@ -69,7 +69,7 @@ struct FeaturesView: View {
 
                 VStack(spacing: 15) {
                     NavigationLink(destination: FinalTutorialView().navigationBarBackButtonHidden(true)) {
-                        Text("Next")
+                        Text(NSLocalizedString("Next", comment: "Button text to proceed to next screen"))
                             .font(.title2)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 50)
@@ -80,7 +80,7 @@ struct FeaturesView: View {
                     }
 
                     NavigationLink(destination: Homepage().navigationBarBackButtonHidden(true)) {
-                        Text("Skip")
+                        Text(NSLocalizedString("Skip", comment: "Button text to skip tutorial"))
                             .font(.title3)
                             .foregroundColor(.gray)
                     }
@@ -121,8 +121,6 @@ struct FeatureRow: View {
         }
     }
 }
-
-
 
 struct FeaturesView_Previews: PreviewProvider {
     static var previews: some View {
