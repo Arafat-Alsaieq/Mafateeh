@@ -90,7 +90,11 @@
     "Go Home" : {
 
     },
+    "Go settings" : {
+
+    },
     "Go Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

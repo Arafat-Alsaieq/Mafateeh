@@ -38,7 +38,7 @@ struct FinalTutorialView: View {
                             }
                         }
                     }) {
-                        Text("Go Settings")
+                        Text("Go settings")
                             .font(.title2)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 50)
