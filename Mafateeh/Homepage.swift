@@ -18,12 +18,17 @@ struct Homepage: View {
                     Spacer()
 
                     VStack(spacing: -50) {
-                        NavigationLink(destination: AppFeatures()){
+                        // زر App Features
+                        NavigationLink(destination: AppFeatures()) {
                             CustomButton(text: NSLocalizedString("App Features", comment: "Button text for app features"), emoji: "🌟")
                         }
+                        
+                        // زر Tutorial
                         NavigationLink(destination: AppTutorial()) {
                             CustomButton(text: NSLocalizedString("Tutorial", comment: "Button text for tutorial"), emoji: "🎞️")
                         }
+                        
+                        // زر My Clipboard
                         NavigationLink(destination: MyClipboard()) {
                             CustomButton(text: NSLocalizedString("My clipboard", comment: "Button text for my clipboard"), emoji: "📋")
                         }
@@ -31,6 +36,7 @@ struct Homepage: View {
                     .padding(.bottom, 50)
                 }
             }
+            .navigationBarBackButtonHidden(true) // إخفاء زر الرجوع
         }
     }
 }

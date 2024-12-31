@@ -32,6 +32,9 @@
         }
       }
     },
+    "Add Keyboard" : {
+
+    },
     "Add Phrase" : {
       "localizations" : {
         "ar" : {
@@ -83,6 +86,9 @@
           }
         }
       }
+    },
+    "Go Home" : {
+
     },
     "Go Settings" : {
       "localizations" : {

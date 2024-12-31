@@ -3,7 +3,10 @@ import SwiftUI
 struct AnimatedTextScreen: View {
     @State private var showLetters = Array(repeating: false, count: 7)
     @State private var pressed = Array(repeating: false, count: 7)
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
     @State private var navigateToFeaturesView = false
+
+    @State private var navigateToNextScreen = false // حالة للتنقل إلى الشاشة التالية
     
     let letters = Array("مفاتيح")
     
@@ -46,6 +49,11 @@ struct AnimatedTextScreen: View {
                 }
             }
             .onAppear {
+                // الانتقال بعد 4 ثوانٍ
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    navigateToNextScreen = true
+                }
+            }.onAppear {
                 for index in 0..<letters.count {
                     DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.3) {
                         withAnimation {
@@ -69,24 +77,22 @@ struct AnimatedTextScreen: View {
                     }
                 }
             }
-            
-            // الانتقال إلى FeaturesView بعد 4 ثواني
-            NavigationLink(
-                destination: FeaturesView().navigationBarBackButtonHidden(true), // إخفاء زر الرجوع
-                isActive: $navigateToFeaturesView,
-                label: { EmptyView() }
-            )
+                
+                // الانتقال إلى الشاشة التالية
+                NavigationLink(
+                    destination: hasSeenOnboarding ? AnyView(Homepage()) : AnyView(FeaturesView()),
+                    isActive: $navigateToNextScreen,
+                    label: { EmptyView() }
+                )
+            }
         }
     }
-}
-
-
-struct ContentView: View {
-    var body: some View {
-        AnimatedTextScreen()
+    struct ContentView: View {
+        var body: some View {
+            AnimatedTextScreen()
+        }
     }
-}
-
-#Preview {
-    ContentView()
-}
+    
+    #Preview {
+        ContentView()
+    }

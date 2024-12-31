@@ -1,11 +1,29 @@
 import SwiftUI
+import AVKit
+
+struct MainContentView: View {
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
+
+    var body: some View {
+        NavigationStack {
+            if hasSeenOnboarding {
+                Homepage() // الانتقال إلى الصفحة الرئيسية مباشرة
+            } else {
+                FeaturesView() // عرض صفحات Onboarding
+            }
+        }
+    }
+}
 
 struct FeaturesView: View {
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
+    @State private var navigateToHomepage: Bool = false // حالة للتنقل إلى الصفحة الرئيسية
     @State private var progress: CGFloat = 0
 
     var body: some View {
         NavigationStack {
             VStack {
+                // محتوى Onboarding هنا
                 HStack(spacing: 10) {
                     ZStack(alignment: .leading) {
                         Capsule()
@@ -13,7 +31,8 @@ struct FeaturesView: View {
                             .frame(width: 150, height: 7)
 
                         Capsule()
-                            .fill(Color.blue)
+                            
+                            .fill(Color(red: 62/255, green: 81/255, blue: 255/255)) // لون #3E51FF)
                             .frame(width: progress * 150, height: 7)
                     }
 
@@ -23,6 +42,7 @@ struct FeaturesView: View {
                 }
                 .padding(.top, 30)
                 .onAppear {
+                    // تحديث progress عند ظهور الصفحة
                     withAnimation(.linear(duration: 0.5)) {
                         progress = 1
                     }
@@ -35,9 +55,9 @@ struct FeaturesView: View {
                         RoundedRectangle(cornerRadius: 30)
                             .fill(Color.white)
                             .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 5)
-                            .frame(width: UIScreen.main.bounds.width - 40, height: 530)
+                            .frame(width: UIScreen.main.bounds.width - 40, height: 500)
                             .overlay(
-                                VStack(alignment: .leading, spacing: 50) {
+                                VStack(alignment: .leading, spacing: 40) {
                                     FeatureRow(
                                         title: NSLocalizedString("Larger and Clearer than Ever", comment: "Feature: Describes the size of the keyboard"),
                                         description: NSLocalizedString("A bigger, easier-to-read keyboard for better clarity", comment: "Description for larger keyboard feature"),
@@ -68,30 +88,41 @@ struct FeaturesView: View {
                 Spacer()
 
                 VStack(spacing: 15) {
-                    NavigationLink(destination: FinalTutorialView().navigationBarBackButtonHidden(true)) {
-                        Text(NSLocalizedString("Next", comment: "Button text to proceed to next screen"))
+                    NavigationLink(destination: FFinalTutorialView().navigationBarBackButtonHidden(true)) {
+                        Text("Next")
                             .font(.title2)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 50)
-                            .background(Color.blue)
+                            .background(Color(red: 62/255, green: 81/255, blue: 255/255)) // لون #3E51FF
                             .cornerRadius(25)
                             .padding(.horizontal, 20)
-                        
                     }
 
-                    NavigationLink(destination: Homepage().navigationBarBackButtonHidden(true)) {
-                        Text(NSLocalizedString("Skip", comment: "Button text to skip tutorial"))
+                    Button(action: {
+                        hasSeenOnboarding = true // تحديث الحالة
+                        navigateToHomepage = true
+                    }) {
+                        Text("Skip")
                             .font(.title3)
                             .foregroundColor(.gray)
                     }
+                    .background(
+                        NavigationLink(
+                            destination: Homepage().navigationBarBackButtonHidden(true),
+                            isActive: $navigateToHomepage
+                        ) {
+                            EmptyView()
+                        }
+                        .hidden()
+                    )
                 }
                 .padding(.bottom, 30)
             }
             .background(Color(UIColor.systemGray6))
+            .navigationBarBackButtonHidden(true) // إخفاء زر الرجوع
         }
     }
 }
-
 struct FeatureRow: View {
     var title: String
     var description: String
@@ -125,5 +156,97 @@ struct FeatureRow: View {
 struct FeaturesView_Previews: PreviewProvider {
     static var previews: some View {
         FeaturesView()
+    }
+}
+struct FFinalTutorialView: View {
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
+    @State private var navigateToHomepage: Bool = false // تعريف المتغير هنا
+
+    private var player: AVPlayer {
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "tutorial", ofType: "mp4")!))
+        player.actionAtItemEnd = .none // استمرار الفيديو عند النهاية
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
+            player.seek(to: .zero) // إعادة تشغيل الفيديو من البداية
+            player.play()
+        }
+        player.play() // تشغيل الفيديو تلقائيًا
+        return player
+    }
+
+    var body: some View {
+        NavigationStack {
+            VStack {
+                HStack(spacing: 10) {
+                    Capsule()
+                        .fill(Color(red: 62/255, green: 81/255, blue: 255/255))
+                        .frame(width: 150, height: 7)
+                    
+                    Capsule()
+                        .fill(Color(red: 62/255, green: 81/255, blue: 255/255)) // لون #3E51FF)
+                        .frame(width: 150, height: 7)
+                }
+                .padding(.top, 30)
+                
+                Spacer(minLength: 35)
+
+               
+                    VStack(spacing: 30) {
+                        // إزالة الخلفية السوداء من المستطيل
+                        RoundedRectangle(cornerRadius: 30)
+                            .foregroundColor(.clear) // جعل الخلفية شفافة
+                            .frame(width: UIScreen.main.bounds.width - 50, height: 500)
+                            .overlay(
+                                VideoPlayer(player: player)
+                                    .cornerRadius(30) // لإعطاء الزوايا نفس الشكل
+                                    .clipped() // لمنع تجاوز الفيديو للحواف
+                            )
+                    }
+                    .padding(.vertical, 10)
+                
+
+                Spacer()
+                    .background(Color.white)
+                    .ignoresSafeArea()
+
+                VStack(spacing: 15) {
+                    // تعديل زر Add Keyboard لفتح إعدادات التطبيق
+                    Button(action: {
+                        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                            if UIApplication.shared.canOpenURL(settingsURL) {
+                                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                            }
+                        }
+                    }) {
+                        Text("Add Keyboard")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, minHeight: 50)
+                            .background(Color(red: 62/255, green: 81/255, blue: 255/255)) // لون #3E51FF
+                            .cornerRadius(25)
+                            .padding(.horizontal, 20)
+                    }
+
+                    Button(action: {
+                        hasSeenOnboarding = true // تحديث الحالة
+                        navigateToHomepage = true
+                    }) {
+                        Text("Go Home")
+                            .font(.title3)
+                            .foregroundColor(.gray)
+                    }
+                    .background(
+                        NavigationLink(
+                            destination: Homepage().navigationBarBackButtonHidden(true),
+                            isActive: $navigateToHomepage
+                        ) {
+                            EmptyView()
+                        }
+                        .hidden()
+                    )
+                }
+                .padding(.bottom, 30)
+            }
+            .background(Color(UIColor.systemGray6))
+        }
     }
 }

@@ -18,7 +18,7 @@ struct AppFeatures: View {
                 RoundedRectangle(cornerRadius: 30)
                     .fill(Color.white)
                     .shadow(color: Color.gray.opacity(0.3), radius: 20, x: 0, y: 15)
-                    .frame(width: UIScreen.main.bounds.width - 40, height: 650)
+                    .frame(width: UIScreen.main.bounds.width - 40, height: 600)
                     .overlay(
                         VStack(alignment: .leading, spacing: 50) {
                             FeatureRow(
@@ -60,12 +60,12 @@ struct FeatureRowl: View {
         HStack(alignment: .top, spacing: 20) {
             VStack(alignment: .leading, spacing: 10) {
                 Text(title)
-                    .font(.system(size: 40))
+                   .font(.system(size: 40))
                     .fontWeight(.bold)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(description)
-                    .font(.system(size: 30))
+                   .font(.system(size: 30))
                     .foregroundColor(.gray)
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)

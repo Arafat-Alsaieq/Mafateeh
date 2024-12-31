@@ -1,10 +1,3 @@
-//
-//  MafateehApp.swift
-//  Mafateeh
-//
-//  Created by Arafat on 15/12/2024.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -25,7 +18,7 @@ struct MafateehApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AnimatedTextScreen()
+            AnimatedTextScreen() // البداية مع صفحة التحميل
         }
         .modelContainer(sharedModelContainer)
     }
