@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8BCCC5472D19502900D8E435 /* Enlarged Key English.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		32AFE1BF2D246BB20028C8F7 /* EnlargedKeysArabic.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 32AFE1B82D246BB20028C8F7 /* EnlargedKeysArabic.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A588127F2D1D344E004CB8BD /* AppName.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A588127E2D1D344E004CB8BD /* AppName.xcstrings */; };
-		A58812802D1D344E004CB8BD /* AppName.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A588127E2D1D344E004CB8BD /* AppName.xcstrings */; };
-		A5A16AE52D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */; };
 		A5A16AE62D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		32AFE1BD2D246BB20028C8F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86D263272D0EC00C000FC61F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32AFE1B72D246BB20028C8F7;
+			remoteInfo = EnlargedKeysArabic;
+		};
 		86D263422D0EC00E000FC61F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86D263272D0EC00C000FC61F /* Project object */;
@@ -29,13 +34,6 @@
 			remoteGlobalIDString = 86D2632E2D0EC00C000FC61F;
 			remoteInfo = Mafateeh;
 		};
-		8BCCC5452D19502900D8E435 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86D263272D0EC00C000FC61F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8BCCC53F2D19502900D8E435;
-			remoteInfo = "Enlarged Key English";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8BCCC5472D19502900D8E435 /* Enlarged Key English.appex in Embed Foundation Extensions */,
+				32AFE1BF2D246BB20028C8F7 /* EnlargedKeysArabic.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -53,25 +51,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		32AFE1B82D246BB20028C8F7 /* EnlargedKeysArabic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EnlargedKeysArabic.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D2632F2D0EC00C000FC61F /* Mafateeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mafateeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D263412D0EC00E000FC61F /* MafateehTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafateehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Enlarged Key English.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A588127E2D1D344E004CB8BD /* AppName.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = AppName.xcstrings; sourceTree = "<group>"; };
 		A5A16AE42D1A9B3D004D7206 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8BCCC54A2D19502900D8E435 /* Exceptions for "Enlarged Key English" folder in "Enlarged Key English" target */ = {
+		32AFE1C22D246BB20028C8F7 /* Exceptions for "EnlargedKeysArabic" folder in "EnlargedKeysArabic" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 8BCCC53F2D19502900D8E435 /* Enlarged Key English */;
+			target = 32AFE1B72D246BB20028C8F7 /* EnlargedKeysArabic */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		32AFE1B92D246BB20028C8F7 /* EnlargedKeysArabic */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				32AFE1C22D246BB20028C8F7 /* Exceptions for "EnlargedKeysArabic" folder in "EnlargedKeysArabic" target */,
+			);
+			path = EnlargedKeysArabic;
+			sourceTree = "<group>";
+		};
 		86D263312D0EC00C000FC61F /* Mafateeh */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Mafateeh;
@@ -87,17 +93,16 @@
 			path = MafateehUITests;
 			sourceTree = "<group>";
 		};
-		8BCCC5412D19502900D8E435 /* Enlarged Key English */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8BCCC54A2D19502900D8E435 /* Exceptions for "Enlarged Key English" folder in "Enlarged Key English" target */,
-			);
-			path = "Enlarged Key English";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		32AFE1B52D246BB20028C8F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86D2632C2D0EC00C000FC61F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,13 +124,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BCCC53D2D19502900D8E435 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -137,7 +135,7 @@
 				86D263312D0EC00C000FC61F /* Mafateeh */,
 				86D263442D0EC00E000FC61F /* MafateehTests */,
 				86D2634E2D0EC00E000FC61F /* MafateehUITests */,
-				8BCCC5412D19502900D8E435 /* Enlarged Key English */,
+				32AFE1B92D246BB20028C8F7 /* EnlargedKeysArabic */,
 				86D263302D0EC00C000FC61F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,7 +146,7 @@
 				86D2632F2D0EC00C000FC61F /* Mafateeh.app */,
 				86D263412D0EC00E000FC61F /* MafateehTests.xctest */,
 				86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */,
-				8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */,
+				32AFE1B82D246BB20028C8F7 /* EnlargedKeysArabic.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +154,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		32AFE1B72D246BB20028C8F7 /* EnlargedKeysArabic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32AFE1C32D246BB20028C8F7 /* Build configuration list for PBXNativeTarget "EnlargedKeysArabic" */;
+			buildPhases = (
+				32AFE1B42D246BB20028C8F7 /* Sources */,
+				32AFE1B52D246BB20028C8F7 /* Frameworks */,
+				32AFE1B62D246BB20028C8F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				32AFE1B92D246BB20028C8F7 /* EnlargedKeysArabic */,
+			);
+			name = EnlargedKeysArabic;
+			packageProductDependencies = (
+			);
+			productName = EnlargedKeysArabic;
+			productReference = 32AFE1B82D246BB20028C8F7 /* EnlargedKeysArabic.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		86D2632E2D0EC00C000FC61F /* Mafateeh */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86D263552D0EC00E000FC61F /* Build configuration list for PBXNativeTarget "Mafateeh" */;
@@ -168,7 +188,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8BCCC5462D19502900D8E435 /* PBXTargetDependency */,
+				32AFE1BE2D246BB20028C8F7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				86D263312D0EC00C000FC61F /* Mafateeh */,
@@ -226,28 +246,6 @@
 			productReference = 86D2634B2D0EC00E000FC61F /* MafateehUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		8BCCC53F2D19502900D8E435 /* Enlarged Key English */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BCCC54B2D19502900D8E435 /* Build configuration list for PBXNativeTarget "Enlarged Key English" */;
-			buildPhases = (
-				8BCCC53C2D19502900D8E435 /* Sources */,
-				8BCCC53D2D19502900D8E435 /* Frameworks */,
-				8BCCC53E2D19502900D8E435 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				8BCCC5412D19502900D8E435 /* Enlarged Key English */,
-			);
-			name = "Enlarged Key English";
-			packageProductDependencies = (
-			);
-			productName = "Enlarged Key English";
-			productReference = 8BCCC5402D19502900D8E435 /* Enlarged Key English.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -258,6 +256,9 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					32AFE1B72D246BB20028C8F7 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					86D2632E2D0EC00C000FC61F = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -268,9 +269,6 @@
 					86D2634A2D0EC00E000FC61F = {
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 86D2632E2D0EC00C000FC61F;
-					};
-					8BCCC53F2D19502900D8E435 = {
-						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -292,12 +290,19 @@
 				86D2632E2D0EC00C000FC61F /* Mafateeh */,
 				86D263402D0EC00E000FC61F /* MafateehTests */,
 				86D2634A2D0EC00E000FC61F /* MafateehUITests */,
-				8BCCC53F2D19502900D8E435 /* Enlarged Key English */,
+				32AFE1B72D246BB20028C8F7 /* EnlargedKeysArabic */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		32AFE1B62D246BB20028C8F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86D2632D2D0EC00C000FC61F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,18 +326,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BCCC53E2D19502900D8E435 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A58812802D1D344E004CB8BD /* AppName.xcstrings in Resources */,
-				A5A16AE52D1A9B3D004D7206 /* InfoPlist.xcstrings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		32AFE1B42D246BB20028C8F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86D2632B2D0EC00C000FC61F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,16 +357,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BCCC53C2D19502900D8E435 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		32AFE1BE2D246BB20028C8F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32AFE1B72D246BB20028C8F7 /* EnlargedKeysArabic */;
+			targetProxy = 32AFE1BD2D246BB20028C8F7 /* PBXContainerItemProxy */;
+		};
 		86D263432D0EC00E000FC61F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 86D2632E2D0EC00C000FC61F /* Mafateeh */;
@@ -374,14 +375,62 @@
 			target = 86D2632E2D0EC00C000FC61F /* Mafateeh */;
 			targetProxy = 86D2634C2D0EC00E000FC61F /* PBXContainerItemProxy */;
 		};
-		8BCCC5462D19502900D8E435 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8BCCC53F2D19502900D8E435 /* Enlarged Key English */;
-			targetProxy = 8BCCC5452D19502900D8E435 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		32AFE1C02D246BB20028C8F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnlargedKeysArabic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EnlargedKeysArabic;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LujainM.Mfateeh.EnlargedKeysArabic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32AFE1C12D246BB20028C8F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JXJN5SRBCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnlargedKeysArabic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EnlargedKeysArabic;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LujainM.Mfateeh.EnlargedKeysArabic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		86D263532D0EC00E000FC61F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -513,7 +562,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mafateeh/Preview Content\"";
-				DEVELOPMENT_TEAM = JXJN5SRBCT;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -526,7 +575,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.LujainM.Mfateeh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MARYAM.Mfateeh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -571,11 +620,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23M44X3UB9;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Arafat.MafateehTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maryam.MafateehTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -608,10 +657,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23M44X3UB9;
+				DEVELOPMENT_TEAM = WVVL9YZMLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Arafat.MafateehUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maryam.MafateehUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -637,62 +686,18 @@
 			};
 			name = Release;
 		};
-		8BCCC5482D19502900D8E435 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JXJN5SRBCT;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Enlarged Key English/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Key English";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.razan.Mafateeh.Enlarged-Key-English";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8BCCC5492D19502900D8E435 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JXJN5SRBCT;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Enlarged Key English/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Enlarged Key English";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.razan.Mafateeh.Enlarged-Key-English";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		32AFE1C32D246BB20028C8F7 /* Build configuration list for PBXNativeTarget "EnlargedKeysArabic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32AFE1C02D246BB20028C8F7 /* Debug */,
+				32AFE1C12D246BB20028C8F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		86D2632A2D0EC00C000FC61F /* Build configuration list for PBXProject "Mafateeh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -725,15 +730,6 @@
 			buildConfigurations = (
 				86D2635C2D0EC00E000FC61F /* Debug */,
 				86D2635D2D0EC00E000FC61F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8BCCC54B2D19502900D8E435 /* Build configuration list for PBXNativeTarget "Enlarged Key English" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8BCCC5482D19502900D8E435 /* Debug */,
-				8BCCC5492D19502900D8E435 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
