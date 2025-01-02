@@ -163,7 +163,7 @@ struct FFinalTutorialView: View {
     @State private var navigateToHomepage: Bool = false // تعريف المتغير هنا
 
     private var player: AVPlayer {
-        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "tutorial", ofType: "mp4")!))
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "Vid1", ofType: "mp4")!))
         player.actionAtItemEnd = .none // استمرار الفيديو عند النهاية
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
             player.seek(to: .zero) // إعادة تشغيل الفيديو من البداية
@@ -194,7 +194,7 @@ struct FFinalTutorialView: View {
                         // إزالة الخلفية السوداء من المستطيل
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundColor(.clear) // جعل الخلفية شفافة
-                            .frame(width: UIScreen.main.bounds.width - 50, height: 500)
+                            .frame(width: UIScreen.main.bounds.width - 30, height: 550)
                             .overlay(
                                 VideoPlayer(player: player)
                                     .cornerRadius(30) // لإعطاء الزوايا نفس الشكل
