@@ -17,22 +17,35 @@
 		<key>Enlarged Keys English.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Enlarged Keys.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>EnlargedKeysArabic.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>Mafateeh.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>328CA30F2D33A68300B02588</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>328CA3302D33A73D00B02588</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>86D2632E2D0EC00C000FC61F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
